@@ -1,24 +1,38 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeProvider";
+import { Route, Routes } from "react-router-dom";
 import { Clock } from "../Clock/Clock";
+import { StopWatch } from "../StopWatch/StopWatch";
 import "./Main.scss";
 
-export const Main = ({ ctime }) => {
-  const { theme } = useContext(ThemeContext);
-
+export const Main = ({
+  ctime,
+  stopWatchTime,
+  stopWatchStatus,
+  stopWatchStart,
+  stopWatchStop,
+  stopWatchReset,
+  stopWatchResume,
+}) => {
   return (
     <main>
       <div className="container">
         <div className="inner">
-          <Clock ctime={ctime} />
-          {/* <h1>This is a site with the ability to change the subject</h1>
-          <h2 className="light">{theme ? "Dark" : "Light"}</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-            enim, fuga qui eos iure omnis unde. Et quod iure velit quasi, libero
-            sapiente esse nulla? Qui eaque odit laborum doloremque.
-          </p>
-        */}
+          <Routes>
+            <Route path="/" element={<Clock ctime={ctime} />} />
+            <Route
+              path="/stopwatch"
+              element={
+                <StopWatch
+                  time={stopWatchTime}
+                  status={stopWatchStatus}
+                  start={stopWatchStart}
+                  stop={stopWatchStop}
+                  reset={stopWatchReset}
+                  resume={stopWatchResume}
+                />
+              }
+            />
+          </Routes>
         </div>
       </div>
     </main>
