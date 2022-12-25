@@ -1,18 +1,6 @@
 import React, { useState } from "react";
 import "./Clock.scss";
 
-export const Clock = () => {
-  let time = new Date().toLocaleTimeString();
-
-  const [ctime, setCtime] = useState(time);
-
-  const updateTime = () => {
-    let time = new Date().toLocaleTimeString();
-    setCtime(time);
-    setTimeout(updateTime, 1000);
-  };
-
-  setTimeout(updateTime, 1000);
-
+export const Clock = ({ ctime }) => {
   return <h1 className="clock">{ctime}</h1>;
 };
