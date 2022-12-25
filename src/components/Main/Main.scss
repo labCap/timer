@@ -1,0 +1,19 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    text-align: left;
+  }
+}

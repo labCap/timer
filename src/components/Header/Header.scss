@@ -1,0 +1,17 @@
+header {
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    margin-bottom: 20px;
+  }
+
+  .theme-btn {
+    padding: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
