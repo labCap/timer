@@ -20,6 +20,8 @@ function App() {
   const [stopWatchInterv, setStopWatchInterv] = useState();
   const [stopWatchStatus, setStopWatchStatus] = useState(0);
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   // logic for clock
   const updateTime = () => {
     let time = new Date().toLocaleTimeString();
@@ -82,10 +84,18 @@ function App() {
 
   const stopWatchResume = () => stopWatchStart();
 
+  const handleClickToMenuBtn = () => {
+    setMenuOpen(!menuOpen);
+    document.body.classList.toggle("_lock");
+  };
+
   return (
     <Router>
       <div className={`wrapper ${theme ? "dark" : "light"}`}>
-        <Header />
+        <Header
+          menuOpen={menuOpen}
+          handleClickToMenuBtn={handleClickToMenuBtn}
+        />
 
         <Main
           ctime={ctime}

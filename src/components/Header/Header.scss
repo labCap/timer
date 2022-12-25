@@ -7,46 +7,6 @@ header {
     margin-bottom: 20px;
   }
 
-  .nav {
-    &__list {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-
-      @media (max-width: 768px) {
-        flex-direction: column;
-        gap: 50px;
-      }
-    }
-
-    &__item {
-      font-size: 20px;
-      font-weight: 600;
-      @media (max-width: 768px) {
-        font-size: 30px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      position: absolute;
-      top: 0;
-      left: 120%;
-      z-index: 100;
-      width: 100vw;
-      height: 100vh;
-      // background-color: #d3d3d3e0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      transition: all 0.3s ease;
-
-      &.open {
-        left: 0;
-      }
-    }
-  }
-
   .theme-btn {
     padding: 10px;
     border: none;

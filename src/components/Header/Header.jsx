@@ -4,17 +4,12 @@ import { Link } from "react-router-dom";
 import { ThemeContext } from "../../context/ThemeProvider";
 import { Button } from "../Button/Button";
 import { Logo } from "../Logo/Logo";
+import { Nav } from "../Nav/Nav";
 
 import "./Header.scss";
 
-export const Header = () => {
+export const Header = ({ menuOpen, handleClickToMenuBtn = (f) => f }) => {
   const { theme, setTheme } = useContext(ThemeContext);
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleClick = () => {
-    setMenuOpen(!menuOpen);
-    document.body.classList.toggle("_lock");
-  };
 
   return (
     <header>
@@ -22,16 +17,7 @@ export const Header = () => {
         <div className="inner">
           <Logo />
 
-          <nav className={`nav ${menuOpen && "open"}`}>
-            <ul className="nav__list">
-              <li className="nav__item">
-                <Link to={"/"}>Clock</Link>
-              </li>
-              <li className="nav__item">
-                <Link to={"/stopwatch"}>StopWatch</Link>
-              </li>
-            </ul>
-          </nav>
+          <Nav menuOpen={menuOpen} />
 
           <Button className={"theme-btn"} onClick={() => setTheme(!theme)}>
             {theme ? <FaSun /> : <FaMoon />}
@@ -39,7 +25,7 @@ export const Header = () => {
 
           <div
             className={`menu-btn ${menuOpen && "open"}`}
-            onClick={handleClick}
+            onClick={handleClickToMenuBtn}
           >
             <span></span>
           </div>
