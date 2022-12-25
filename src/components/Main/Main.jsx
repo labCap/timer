@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeProvider";
+import { Clock } from "../Clock/Clock";
 import "./Main.scss";
 
 export const Main = () => {
@@ -9,6 +10,7 @@ export const Main = () => {
     <main>
       <div className="container">
         <div className="inner">
+          <Clock />
           {/* <h1>This is a site with the ability to change the subject</h1>
           <h2 className="light">{theme ? "Dark" : "Light"}</h2>
           <p>
