@@ -2,4 +2,12 @@
   font-size: 100px;
   font-weight: 700;
   letter-spacing: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 70px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 50px;
+  }
 }

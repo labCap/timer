@@ -1,3 +1,9 @@
+.display {
+  @media (max-width: 425px) {
+    font-size: 30px;
+  }
+}
+
 .buttons {
   display: inline-flex;
   align-items: center;
