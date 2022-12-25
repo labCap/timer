@@ -9,9 +9,10 @@ export const Clock = () => {
   const updateTime = () => {
     let time = new Date().toLocaleTimeString();
     setCtime(time);
+    setTimeout(updateTime, 1000);
   };
 
-  setInterval(updateTime, 1000);
+  setTimeout(updateTime, 1000);
 
   return <h1 className="clock">{ctime}</h1>;
 };
